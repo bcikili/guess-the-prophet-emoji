@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess the Islamic Prophets - Emoji Quiz Game (v1.0)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-container">
+
+    <!-- ====================================================================
+         1. START SCREEN: Game Explanation, Rules & Difficulty Selection
+         ==================================================================== -->
+    <section id="start-screen" class="screen active" aria-labelledby="main-game-title">
+      <div class="start-card">
+        <div class="hero-emojis" aria-hidden="true">🚢 🐋 🔥 🪄 🕋 🌙</div>
+        <h1 id="main-game-title" class="game-title">Guess the Islamic Prophets</h1>
+        <p class="game-subtitle">
+          A fun emoji guessing adventure through the stories of the Prophets in the Holy Qur'an &amp; Sunnah!
+        </p>
+
+        <!-- Simple Explanation & Rules -->
+        <div class="rules-box">
+          <h2 class="rules-title">🎮 How to Play &amp; Game Rules</h2>
+          <ol class="rules-list">
+            <li>
+              <span class="rule-step-num">1</span>
+              <div>
+                <strong>Choose Your Level:</strong> Pick <strong>Easy</strong>, <strong>Medium</strong>, or <strong>Advanced</strong> below. You will get <strong>10 random questions</strong> from that level!
+              </div>
+            </li>
+            <li>
+              <span class="rule-step-num">2</span>
+              <div>
+                <strong>Look at the Emojis First:</strong> Each round starts by showing big, colorful emojis on the screen. Try to guess the Prophet right from the emojis!
+              </div>
+            </li>
+            <li>
+              <span class="rule-step-num">3</span>
+              <div>
+                <strong>Click "Next" for the Question:</strong> Click the <strong>Next</strong> button in the <strong>bottom-right corner</strong> and the full <strong>Question</strong> clue will appear on screen!
+              </div>
+            </li>
+            <li>
+              <span class="rule-step-num">4</span>
+              <div>
+                <strong>Click "Answer" to Reveal:</strong> Click the <strong>Answer</strong> button to see the <strong>Name of the Prophet</strong> and the <strong>Context:</strong> behind the story!
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Difficulty Level Selection -->
+        <h2 class="level-select-heading">🌟 Select Your Difficulty Level to Start:</h2>
+        <div class="level-grid">
+          <button type="button" class="level-btn easy" data-level="easy">
+            <span class="level-icon">🟢</span>
+            <span class="level-name">Easy Level</span>
+            <span class="level-desc">Famous miracles, animals &amp; beloved stories (10 random from 35 questions)</span>
+          </button>
+
+          <button type="button" class="level-btn medium" data-level="medium">
+            <span class="level-icon">🟡</span>
+            <span class="level-name">Medium Level</span>
+            <span class="level-desc">Quranic parables, dialogues &amp; deeper clues (10 random from 35 questions)</span>
+          </button>
+
+          <button type="button" class="level-btn advanced" data-level="advanced">
+            <span class="level-icon">🔴</span>
+            <span class="level-name">Advanced Level</span>
+            <span class="level-desc">Master detective level, landmarks &amp; details (10 random from 30 questions)</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         2. GAME SCREEN: 10 Random Questions Per Session
+         ==================================================================== -->
+    <section id="game-screen" class="screen" aria-live="polite">
+      <header class="game-header">
+        <button type="button" id="btn-home" class="btn-home">
+          🏠 Change Level / Rules
+        </button>
+        <div class="header-info">
+          <span id="level-badge" class="level-badge easy">🟢 Easy Level</span>
+          <span id="progress-text" class="progress-pill">Question 1 of 10</span>
+        </div>
+      </header>
+
+      <!-- Visual 10-question progress dots -->
+      <div id="progress-dots" class="progress-dots" aria-hidden="true"></div>
+
+      <!-- Big Bright Colorful Emoji Card -->
+      <div id="emoji-stage-card" class="emoji-stage-card emoji-theme-0">
+        <div class="guess-prompt-badge">🤔 Guess the Prophet from the Emojis!</div>
+        <div id="emoji-showcase" class="emoji-showcase" role="img" aria-label="Emoji clues"></div>
+        <p id="stage-helper-text" class="stage-helper-text">
+          Can you guess the Prophet from these emojis?
+        </p>
+      </div>
+
+      <!-- Question Card (Appears when clicking Next in bottom-right corner) -->
+      <div id="question-card" class="reveal-card question-card hidden">
+        <div class="card-label">❓ Question Clue</div>
+        <p id="question-text" class="question-text"></p>
+      </div>
+
+      <!-- Answer Button -->
+      <div class="controls-row">
+        <button type="button" id="btn-answer" class="btn-answer">
+          💡 Answer
+        </button>
+      </div>
+
+      <!-- Answer & Context Card (Appears when clicking Answer button) -->
+      <div id="answer-card" class="reveal-card answer-card hidden">
+        <div class="card-label">🌟 Prophet / Answer</div>
+        <div id="answer-text" class="prophet-answer-name"></div>
+        <div class="context-box">
+          <span class="context-label">Context:</span>
+          <span id="context-text"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. SUMMARY SCREEN: Shown After Completing 10 Questions
+         ==================================================================== -->
+    <section id="summary-screen" class="screen">
+      <div class="summary-card">
+        <div class="summary-trophy" aria-hidden="true">🏆 🌟 🎉</div>
+        <h2 class="summary-title">Round Complete! Masha'Allah!</h2>
+        <p id="summary-subtitle" class="summary-subtitle"></p>
+
+        <div class="summary-actions">
+          <button type="button" id="btn-play-again" class="btn-primary">
+            🔄 Play 10 New Random Questions (Same Level)
+          </button>
+          <button type="button" id="btn-change-level" class="btn-secondary">
+            🎚️ Choose Another Difficulty Level
+          </button>
+        </div>
+
+        <h3 class="level-select-heading">📖 Stories You Explored This Round:</h3>
+        <div id="recap-list" class="recap-list"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom-Right Corner Next Button (Hidden on Start/Summary screens) -->
+  <button type="button" id="btn-next-corner" class="btn-next-corner" style="display: none;">
+    Next (Show Question) ➡️
+  </button>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

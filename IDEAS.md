@@ -37,3 +37,4 @@ Add any prophets and emojis you'd like to include:
 - Hint button (reveals 1 letter or gives a fact)
 - Levels: Easy, Medium, Master Detective
 - High score streak tracker
+
