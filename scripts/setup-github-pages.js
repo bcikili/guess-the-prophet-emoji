@@ -121,7 +121,27 @@ async function main() {
   const branch = execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf8' }).trim();
   execSync(`git push -u origin ${branch}`, { stdio: 'inherit' });
 
-  console.log('5. Enabling GitHub Pages...');
+  console.log('5. Configuring github-pages environment & enabling GitHub Pages...');
+  // Ensure github-pages environment allows deploying from any protected/custom branch (master & main)
+  await githubRequest('PUT', `/repos/${owner}/${REPO_NAME}/environments/github-pages`, token, {
+    deployment_branch_policy: {
+      protected_branches: false,
+      custom_branch_policies: true
+    }
+  });
+  await githubRequest(
+    'POST',
+    `/repos/${owner}/${REPO_NAME}/environments/github-pages/deployment-branch-policies`,
+    token,
+    { name: 'master', type: 'branch' }
+  );
+  await githubRequest(
+    'POST',
+    `/repos/${owner}/${REPO_NAME}/environments/github-pages/deployment-branch-policies`,
+    token,
+    { name: 'main', type: 'branch' }
+  );
+
   const pagesGet = await githubRequest('GET', `/repos/${owner}/${REPO_NAME}/pages`, token);
   if (pagesGet.status === 404) {
     const pagesCreate = await githubRequest('POST', `/repos/${owner}/${REPO_NAME}/pages`, token, {
@@ -146,6 +166,14 @@ async function main() {
     });
     console.log(`   GitHub Pages is active! Live URL: ${pagesGet.data.html_url}`);
   }
+
+  // Trigger a workflow dispatch so GitHub Actions immediately builds and deploys with the updated policy
+  await githubRequest(
+    'POST',
+    `/repos/${owner}/${REPO_NAME}/actions/workflows/deploy-pages.yml/dispatches`,
+    token,
+    { ref: branch }
+  );
 
   console.log(`\n=============================================================`);
   console.log(`SUCCESS! Your game is synced to GitHub Pages:`);
