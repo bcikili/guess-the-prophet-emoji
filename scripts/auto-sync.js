@@ -100,6 +100,11 @@ console.log(' Any file you save will automatically update questions.js,');
 console.log(' run tests, commit, and push live to GitHub Pages!');
 console.log('=============================================================\n');
 
+// Verify .git write access on startup
+const lockTestPath = path.join(ROOT_DIR, '.git', 'autosync-perm-check.tmp');
+fs.writeFileSync(lockTestPath, 'ok');
+fs.unlinkSync(lockTestPath);
+
 // Perform an initial sync check on startup
 syncNow('Initial startup check');
 
