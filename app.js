@@ -311,3 +311,4 @@
     showScreen('start');
   });
 })();
+

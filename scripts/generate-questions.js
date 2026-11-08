@@ -96,3 +96,4 @@ window.PROPHET_QUIZ_DATA = ${JSON.stringify(questions, null, 2)};
 
 fs.writeFileSync(outPath, jsOutput, 'utf8');
 console.log('Successfully wrote questions.js');
+
