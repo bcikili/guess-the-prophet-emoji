@@ -668,7 +668,7 @@ window.PROPHET_QUIZ_DATA = [
   {
     "id": 84,
     "level": "advanced",
-    "emojis": "👶 🗣️ 📜 🕊️ 🌿 🚫 🍷",
+    "emojis": "👶 📜 🕊️ 🌿 👑 🛡️ 🤲",
     "question": "Who was the righteous cousin of Isa, born to Zakariya, whom the Qur'an characterizes as a chaste, honorable leader and prophet (*Sayyidan wa Hasuran*)?",
     "answer": "Prophet Yahya (John) (ʿAlayhi as-Salām)",
     "context": "Surah Ali 'Imran (39). Renowned for his asceticism, humility, and defense of divine law."

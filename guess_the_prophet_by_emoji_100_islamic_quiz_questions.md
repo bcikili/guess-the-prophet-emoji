@@ -524,7 +524,7 @@ A comprehensive, categorized trivia database compiled strictly from the Holy Qur
 * **Context:** Surah Ta-Ha (85–96). Samiri cast dirt from the hoofprint of Angel Jibril’s steed into the molten metal.
 
 ### Question 84
-* **Emojis:** 👶 🗣️ 📜 🕊️ 🌿 🚫 🍷
+* **Emojis:** 👶 📜 🕊️ 🌿 👑 🛡️ 🤲
 * **Question:** Who was the righteous cousin of Isa, born to Zakariya, whom the Qur'an characterizes as a chaste, honorable leader and prophet (*Sayyidan wa Hasuran*)?
 * **Answer:** **Prophet Yahya (John) (ʿAlayhi as-Salām)**
 * **Context:** Surah Ali 'Imran (39). Renowned for his asceticism, humility, and defense of divine law.
