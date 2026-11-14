@@ -70,8 +70,8 @@ guess-the-prophet-emoji/
 
 ## ⚖️ Ownership, Intellectual Property & All Rights Reserved Notice
 
-**Copyright © 2026 Burhan Cikili & Ihsan (`bcikili`). All Rights Reserved.**
+**Copyright © 2026 Ihsan Cikili. All Rights Reserved.**
 
-- **Proprietary Work — No Open-Source License:** No permission or license (express or implied, under copyright, trademark, or patent) is granted to copy, clone, redistribute, republish, modify, create derivative works from, scrape/train AI models on, or commercially exploit this game, its code, its UI layout, or its quiz question compilation without prior written permission from the Owners.
+- **Proprietary Work — No Open-Source License:** No permission or license (express or implied, under copyright, trademark, or patent) is granted to copy, clone, redistribute, republish, modify, create derivative works from, scrape/train AI models on, or commercially exploit this game, its code, its UI layout, or its quiz question compilation without prior written permission from the Owner.
 - **Permitted Use:** Personal, family, and non-commercial classroom gameplay directly via [https://bcikili.github.io/guess-the-prophet-emoji/](https://bcikili.github.io/guess-the-prophet-emoji/).
-- **Defensive Prior Art:** The timestamped Git commit history and public GitHub Pages publication document the Owners' authorship and creation date against any third-party patent or ownership claims. See [`LICENSE`](./LICENSE) for full terms.
+- **Defensive Prior Art:** The timestamped Git commit history and public GitHub Pages publication document the Owner's authorship and creation date against any third-party patent or ownership claims. See [`LICENSE`](./LICENSE) for full terms.
