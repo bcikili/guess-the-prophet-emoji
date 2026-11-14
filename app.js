@@ -1,6 +1,9 @@
 /* ==========================================================================
    Guess the Islamic Prophets - Version 1.0
    Main Game Logic (100% Offline, Cross-Browser Compatible)
+   Copyright (c) 2026 Burhan Cikili & Ihsan (GitHub: bcikili).
+   All Rights Reserved. Unauthorized copying, redistribution, or third-party
+   patent/ownership claims are prohibited. See LICENSE.
    ========================================================================== */
 
 (function () {

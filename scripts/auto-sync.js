@@ -28,7 +28,9 @@ const WATCHED_FILES = new Set([
   'style.css',
   'app.js',
   'manifest.json',
-  'README.md'
+  'README.md',
+  'LICENSE',
+  '.github/workflows/deploy-pages.yml'
 ]);
 
 let debounceTimer = null;

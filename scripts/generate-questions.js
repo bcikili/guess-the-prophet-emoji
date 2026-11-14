@@ -91,6 +91,8 @@ for (const q of questions) {
 
 const jsOutput = `// Auto-generated from guess_the_prophet_by_emoji_100_islamic_quiz_questions.md
 // Works offline across all browsers without requiring network or fetch()
+// Copyright (c) 2026 Burhan Cikili & Ihsan (GitHub: bcikili). All Rights Reserved.
+// Unauthorized copying, redistribution, or third-party claims prohibited. See LICENSE.
 window.PROPHET_QUIZ_DATA = ${JSON.stringify(questions, null, 2)};
 `;
 

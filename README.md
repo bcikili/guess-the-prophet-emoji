@@ -53,9 +53,25 @@ guess-the-prophet-emoji/
 ├── style.css                                                 # Bright, kid-friendly responsive styling
 ├── app.js                                                    # Game flow & 10-question randomizer logic
 ├── questions.js                                              # All 100 questions compiled for offline browser support
+├── manifest.json                                             # iPad / PWA home screen web app metadata
+├── LICENSE                                                   # Proprietary All Rights Reserved & Prior Art notice
 ├── scripts/
-│   └── generate-questions.js                                 # Script to sync markdown questions into questions.js
+│   ├── generate-questions.js                                 # Script to sync markdown questions into questions.js
+│   ├── test-game.js                                          # Automated end-to-end game flow test suite
+│   ├── auto-sync.js                                          # Live file watcher to auto-sync updates to GitHub Pages
+│   └── setup-github-pages.js                                 # One-step GitHub Pages repository & workflow setup
 ├── guess_the_prophet_by_emoji_100_islamic_quiz_questions.md  # Source database of 100 Islamic quiz questions
+├── QUESTION_AUDIT_REVIEW.md                                  # Side-by-side audit and revision review log
 ├── IDEAS.md                                                  # Brainstorming notes
 └── README.md                                                 # Project documentation
 ```
+
+---
+
+## ⚖️ Ownership, Intellectual Property & All Rights Reserved Notice
+
+**Copyright © 2026 Burhan Cikili & Ihsan (`bcikili`). All Rights Reserved.**
+
+- **Proprietary Work — No Open-Source License:** No permission or license (express or implied, under copyright, trademark, or patent) is granted to copy, clone, redistribute, republish, modify, create derivative works from, scrape/train AI models on, or commercially exploit this game, its code, its UI layout, or its quiz question compilation without prior written permission from the Owners.
+- **Permitted Use:** Personal, family, and non-commercial classroom gameplay directly via [https://bcikili.github.io/guess-the-prophet-emoji/](https://bcikili.github.io/guess-the-prophet-emoji/).
+- **Defensive Prior Art:** The timestamped Git commit history and public GitHub Pages publication document the Owners' authorship and creation date against any third-party patent or ownership claims. See [`LICENSE`](./LICENSE) for full terms.
